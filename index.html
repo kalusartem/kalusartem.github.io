@@ -1,4 +1,498 @@
 <!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
-<title>kalusartem</title>
-<p><a href="channel-analytics/">Channel Analytics</a></p>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artem Kalus | Full-Stack Developer</title>
+<meta name="description" content="Artem Kalus, full-stack developer. Web apps, real-time multiplayer games and AI automation built with TypeScript, React, Node.js and Postgres.">
+<link rel="canonical" href="https://kalusartem.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Artem Kalus | Full-Stack Developer">
+<meta property="og:description" content="Web apps, real-time multiplayer games and AI automation, taken all the way to production.">
+<meta property="og:url" content="https://kalusartem.github.io/">
+<meta name="theme-color" content="#f6f6f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314141f'/%3E%3Ctext x='32' y='41' font-family='monospace' font-size='24' font-weight='700' fill='white' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  // Apply a saved theme before paint; absent = follow the OS.
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Artem Kalus",
+  "jobTitle": "Full-Stack Developer",
+  "url": "https://kalusartem.github.io/",
+  "sameAs": ["https://github.com/kalusartem", "https://www.linkedin.com/in/artemkalus", "https://full-stack-portfolio-2.pages.dev/"]
+}
+</script>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f6f6f9;
+    --fg: #14141f;
+    --surface: rgba(255, 255, 255, 0.78);
+    --surface-strong: rgba(20, 20, 60, 0.06);
+    --inset: rgba(20, 20, 60, 0.04);
+    --nav: rgba(255, 255, 255, 0.82);
+    --line: rgba(20, 20, 60, 0.12);
+    --line-strong: rgba(20, 20, 60, 0.2);
+    --soft: #3a3a4c;
+    --muted: #4d4d63;
+    --subtle: #66667c;
+    --primary: #14141f;
+    --on-primary: #ffffff;
+    --accent: #4f46e5;
+    --accent-soft: rgba(79, 70, 229, 0.1);
+    --grad-a: #4f46e5;
+    --grad-b: #c026d3;
+    --live: #059669;
+    --glow-a: rgba(217, 70, 239, 0.18);
+    --glow-b: rgba(34, 211, 238, 0.2);
+    --grid: rgba(20, 20, 60, 0.05);
+    --shadow: 0 24px 60px -24px rgba(30, 30, 70, 0.25);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0a0a0a;
+      --fg: #f5f5f5;
+      --surface: rgba(255, 255, 255, 0.05);
+      --surface-strong: rgba(255, 255, 255, 0.1);
+      --inset: rgba(0, 0, 0, 0.25);
+      --nav: rgba(10, 10, 10, 0.7);
+      --line: rgba(255, 255, 255, 0.1);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --soft: rgba(255, 255, 255, 0.76);
+      --muted: rgba(255, 255, 255, 0.64);
+      --subtle: rgba(255, 255, 255, 0.55);
+      --primary: #ffffff;
+      --on-primary: #000000;
+      --accent: #a5b4fc;
+      --accent-soft: rgba(165, 180, 252, 0.12);
+      --grad-a: #c7d2fe;
+      --grad-b: #f0abfc;
+      --live: #34d399;
+      --glow-a: rgba(217, 70, 239, 0.14);
+      --glow-b: rgba(34, 211, 238, 0.1);
+      --grid: rgba(255, 255, 255, 0.035);
+      --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0a0a0a;
+    --fg: #f5f5f5;
+    --surface: rgba(255, 255, 255, 0.05);
+    --surface-strong: rgba(255, 255, 255, 0.1);
+    --inset: rgba(0, 0, 0, 0.25);
+    --nav: rgba(10, 10, 10, 0.7);
+    --line: rgba(255, 255, 255, 0.1);
+    --line-strong: rgba(255, 255, 255, 0.16);
+    --soft: rgba(255, 255, 255, 0.76);
+    --muted: rgba(255, 255, 255, 0.64);
+    --subtle: rgba(255, 255, 255, 0.55);
+    --primary: #ffffff;
+    --on-primary: #000000;
+    --accent: #a5b4fc;
+    --accent-soft: rgba(165, 180, 252, 0.12);
+    --grad-a: #c7d2fe;
+    --grad-b: #f0abfc;
+    --live: #34d399;
+    --glow-a: rgba(217, 70, 239, 0.14);
+    --glow-b: rgba(34, 211, 238, 0.1);
+    --grid: rgba(255, 255, 255, 0.035);
+    --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.6);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    position: relative;
+    margin: 0;
+    background:
+      radial-gradient(40rem 30rem at 85% -5%, var(--glow-a), transparent 70%),
+      radial-gradient(36rem 28rem at -5% 45%, var(--glow-b), transparent 70%),
+      var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 56rem;
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: linear-gradient(#000 30%, transparent);
+    mask-image: linear-gradient(#000 30%, transparent);
+    pointer-events: none;
+    z-index: -1;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  svg { flex-shrink: 0; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .mono { font-family: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 768px) { .wrap { padding: 0 32px; } }
+  .skip { position: absolute; left: -9999px; }
+  .skip:focus { left: 16px; top: 16px; z-index: 50; background: var(--primary); color: var(--on-primary); padding: 8px 14px; border-radius: 10px; }
+
+  /* Nav */
+  header { position: sticky; top: 0; z-index: 20; padding-top: 14px; }
+  nav {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 8px 10px 8px 12px; border: 1px solid var(--line); border-radius: 16px;
+    background: var(--nav); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.01em; }
+  .mark {
+    display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center;
+    border-radius: 9px; background: var(--primary); color: var(--on-primary); font-size: 12px;
+  }
+  .nav-links { display: none; gap: 28px; font-size: 14px; color: var(--soft); }
+  .nav-links a:hover { color: var(--fg); }
+  @media (min-width: 768px) { .nav-links { display: flex; } }
+  .icons { display: flex; gap: 8px; }
+  .icon-btn {
+    display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center;
+    border: 1px solid var(--line); border-radius: 11px; background: var(--surface); color: var(--soft);
+    cursor: pointer; transition: background .2s, color .2s;
+  }
+  .icon-btn:hover { background: var(--surface-strong); color: var(--fg); }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 12px;
+    font-size: 14px; font-weight: 500; border: 1px solid var(--line-strong); background: var(--surface);
+    transition: transform .2s, background .2s;
+  }
+  .btn:hover { transform: translateY(-2px); background: var(--surface-strong); }
+  .btn-primary { background: var(--primary); color: var(--on-primary); border-color: transparent; }
+  .btn-primary:hover { background: var(--primary); }
+
+  /* Hero */
+  .hero { display: grid; gap: 48px; align-items: center; padding: 64px 0 56px; }
+  @media (min-width: 960px) { .hero { grid-template-columns: 1.05fr 0.95fr; padding: 104px 0 72px; } }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid var(--line);
+    border-radius: 999px; background: var(--surface); color: var(--soft); font-size: 14px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 4px color-mix(in srgb, var(--live) 18%, transparent); }
+  h1 { margin: 24px 0 0; font-size: clamp(2.6rem, 6.4vw, 4.6rem); line-height: 1.02; letter-spacing: -0.035em; font-weight: 600; text-wrap: balance; }
+  .grad { background: linear-gradient(100deg, var(--grad-a), var(--grad-b)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { margin: 24px 0 0; max-width: 34rem; font-size: 18px; line-height: 1.75; color: var(--soft); }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 28rem; margin: 48px 0 0; padding-top: 24px; border-top: 1px solid var(--line); }
+  .stats dt { font-size: 12px; color: var(--subtle); }
+  .stats dd { margin: 4px 0 0; font-size: 24px; font-weight: 600; }
+
+  .window { position: relative; display: block; }
+  .window::before { content: ""; position: absolute; inset: -18px; border-radius: 40px; background: var(--glow-a); filter: blur(28px); z-index: -1; }
+  .frame { border: 1px solid var(--line-strong); border-radius: 24px; background: var(--surface); padding: 8px; box-shadow: var(--shadow); }
+  .frame-bar { display: flex; align-items: center; gap: 6px; padding: 4px 10px 10px; }
+  .frame-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong); }
+  .frame-bar span { margin-left: 10px; font-size: 12px; color: var(--subtle); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .frame img { width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: cover; border-radius: 16px; background: var(--inset); }
+  .caption {
+    position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin: -32px 16px 0; padding: 14px 18px; border: 1px solid var(--line); border-radius: 16px;
+    background: var(--nav); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  }
+  .caption small { display: block; font-size: 12px; color: var(--subtle); }
+  .caption strong { font-weight: 600; }
+
+  /* Sections */
+  section { padding: 72px 0; scroll-margin-top: 90px; }
+  .eyebrow { margin: 0; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+  h2 { margin: 12px 0 0; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 600; text-wrap: balance; }
+  .section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; }
+  .section-head p { margin: 0; max-width: 28rem; color: var(--muted); }
+
+  /* Projects */
+  .grid { display: grid; gap: 22px; margin-top: 40px; }
+  @media (min-width: 720px) { .grid { grid-template-columns: repeat(2, 1fr); } .card.featured { grid-column: 1 / -1; } }
+  @media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  .card {
+    display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: 24px;
+    background: var(--surface); transition: transform .3s, border-color .3s;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--line-strong); }
+  .card .shot { aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--inset); }
+  .card .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+  .card:hover .shot img { transform: scale(1.04); }
+  .shot.code {
+    display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 24px 28px; font-size: 13px; color: var(--muted);
+    background: radial-gradient(circle at 80% 0%, var(--accent-soft), transparent 60%), var(--inset);
+  }
+  .shot.code b { color: var(--accent); font-weight: 500; }
+  .shot.code em { color: var(--fg); font-style: normal; }
+  .card .body { display: flex; flex: 1; flex-direction: column; padding: 22px; }
+  .status { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--live); }
+  .status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .card h3 { margin: 6px 0 0; font-size: 22px; letter-spacing: -0.02em; font-weight: 600; }
+  .card p { margin: 10px 0 0; color: var(--muted); line-height: 1.7; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 0; padding: 0; list-style: none; }
+  .tags li { padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; color: var(--soft); background: var(--surface); }
+  .card .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 22px; }
+  .card .btn { padding: 8px 14px; }
+  @media (min-width: 1000px) {
+    .card.featured { display: grid; grid-template-columns: 1.3fr 1fr; }
+    .card.featured .shot { aspect-ratio: auto; min-height: 380px; border-bottom: 0; border-right: 1px solid var(--line); }
+    .card.featured .body { padding: 34px; }
+    .card.featured h3 { font-size: 30px; }
+  }
+
+  /* Skills */
+  .skills { display: grid; gap: 18px; margin-top: 40px; }
+  @media (min-width: 720px) { .skills { grid-template-columns: repeat(2, 1fr); } }
+  .skill { padding: 26px; border: 1px solid var(--line); border-radius: 24px; background: var(--surface); }
+  .skill .ico { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 14px; background: var(--accent-soft); color: var(--accent); }
+  .skill h3 { margin: 18px 0 0; font-size: 20px; font-weight: 600; }
+  .skill p { margin: 8px 0 0; color: var(--muted); line-height: 1.7; }
+
+  /* Connect */
+  .connect { display: grid; gap: 32px; padding: 28px; border: 1px solid var(--line); border-radius: 28px; background: var(--surface); }
+  @media (min-width: 900px) { .connect { grid-template-columns: 1fr 1fr; padding: 48px; align-items: center; } }
+  .connect p { color: var(--muted); max-width: 28rem; }
+  .links { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+  .link {
+    display: flex; align-items: center; gap: 16px; padding: 14px 16px; border: 1px solid var(--line);
+    border-radius: 18px; background: var(--inset); transition: transform .2s, border-color .2s;
+  }
+  .link:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+  .link .logo { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 12px; background: var(--primary); color: var(--on-primary); }
+  .link .text { flex: 1; min-width: 0; }
+  .link strong { display: block; font-weight: 600; }
+  .link small { display: block; color: var(--subtle); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .link .arrow { color: var(--subtle); transition: transform .2s, color .2s; }
+  .link:hover .arrow { color: var(--fg); transform: translate(2px, -2px); }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; }
+  footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px; color: var(--subtle); }
+  footer a:hover { color: var(--fg); }
+  .foot-links { display: flex; flex-wrap: wrap; gap: 18px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.69.82.57A12 12 0 0 0 12 .3Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></g></symbol>
+  <symbol id="i-theme" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Primary">
+      <a class="brand" href="#top"><span class="mark mono">AK</span><span>Artem Kalus</span></a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#connect">Contact</a>
+      </div>
+      <div class="icons">
+        <a class="icon-btn" href="https://github.com/kalusartem" target="_blank" rel="noreferrer" aria-label="GitHub (opens in new tab)" title="GitHub"><svg width="17" height="17"><use href="#i-github"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/artemkalus" target="_blank" rel="noreferrer" aria-label="LinkedIn (opens in new tab)" title="LinkedIn"><svg width="17" height="17"><use href="#i-linkedin"/></svg></a>
+        <button class="icon-btn" type="button" id="theme" aria-label="Toggle dark mode" title="Toggle theme"><svg width="17" height="17"><use href="#i-theme"/></svg></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="hero" id="top">
+    <div>
+      <span class="pill"><span class="dot"></span>Full-Stack Developer · AI Automation</span>
+      <h1>Hi, I'm Artem. <span class="grad">I build software that ships.</span></h1>
+      <p class="lead">Full-stack web apps, real-time multiplayer games and AI automation, built with TypeScript, React, Node.js and Postgres and taken all the way to production.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#work">See my work <svg width="15" height="15"><use href="#i-down"/></svg></a>
+        <a class="btn" href="https://github.com/kalusartem" target="_blank" rel="noreferrer"><svg width="17" height="17"><use href="#i-github"/></svg>GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/artemkalus" target="_blank" rel="noreferrer"><svg width="17" height="17"><use href="#i-linkedin"/></svg>LinkedIn</a>
+      </div>
+      <dl class="stats">
+        <div><dt>Live projects</dt><dd>4</dd></div>
+        <div><dt>Multiplayer games</dt><dd>2</dd></div>
+        <div><dt>Frame budget</dt><dd>60 fps</dd></div>
+      </dl>
+    </div>
+
+    <a class="window" href="https://corsairs-online.duckdns.org/" target="_blank" rel="noreferrer" aria-label="Latest project: Corsairs of the Archipelago (opens in new tab)">
+      <div class="frame">
+        <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="mono">corsairs-online.duckdns.org</span></div>
+        <img src="https://ckwomrqooceocewhzpjv.supabase.co/storage/v1/object/public/project-images/a18f961d-ec3d-45de-af5e-a9bcf7a9e90f.jpg" alt="Corsairs of the Archipelago gameplay: a pirate crew on a dock" width="1200" height="825">
+      </div>
+      <div class="caption">
+        <div><small class="mono">Latest project</small><strong>Corsairs of the Archipelago</strong></div>
+        <svg width="16" height="16"><use href="#i-arrow"/></svg>
+      </div>
+    </a>
+  </div>
+
+  <section id="work">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow mono">Selected work</p>
+        <h2>Things I've built</h2>
+      </div>
+      <p>Live products and experiments, from a car marketplace to browser games running on a free-tier VM.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card featured">
+        <div class="shot"><img loading="lazy" src="https://ckwomrqooceocewhzpjv.supabase.co/storage/v1/object/public/project-images/a18f961d-ec3d-45de-af5e-a9bcf7a9e90f.jpg" alt="Corsairs of the Archipelago preview"></div>
+        <div class="body">
+          <span class="status">Live</span>
+          <h3>Corsairs of the Archipelago</h3>
+          <p>A browser-based multiplayer age-of-sail game: sail a Caribbean archipelago, trade between colonies, fight broadside battles and board prizes alongside other captains in one persistent world. Plain JavaScript and Three.js on the client, a Node.js + WebSocket server sharing the same game rules, on-demand "seas" so it runs on a free-tier VM, and a strict 60 fps budget on integrated GPUs.</p>
+          <ul class="tags"><li>JavaScript</li><li>Three.js</li><li>WebGL</li><li>Node.js</li><li>WebSockets</li><li>Multiplayer</li></ul>
+          <div class="actions"><a class="btn btn-primary" href="https://corsairs-online.duckdns.org/" target="_blank" rel="noreferrer">Visit live <svg width="15" height="15"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot"><img loading="lazy" src="https://ckwomrqooceocewhzpjv.supabase.co/storage/v1/object/public/project-images/b1689cc4-95ac-4eef-9cbc-d5e584eeb759.png" alt="Dustfront FPS preview"></div>
+        <div class="body">
+          <span class="status">Live</span>
+          <h3>Dustfront</h3>
+          <p>A tactical browser FPS inspired by Counter-Strike: bomb-defusal mode, a switchable arsenal with a scoped sniper, PBR environments, glTF models, and real-time multiplayer with a server browser.</p>
+          <ul class="tags"><li>JavaScript</li><li>Three.js</li><li>WebGL</li><li>Multiplayer</li></ul>
+          <div class="actions"><a class="btn btn-primary" href="https://dustfront.duckdns.org/" target="_blank" rel="noreferrer">Visit live <svg width="15" height="15"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot"><img loading="lazy" src="https://ckwomrqooceocewhzpjv.supabase.co/storage/v1/object/public/project-images/d31ed7c9-0f8e-4a6b-81cc-ac55781bd38c.png" alt="Car Market preview"></div>
+        <div class="body">
+          <span class="status">Live</span>
+          <h3>Car Market</h3>
+          <p>A marketplace where people register, list, browse and buy new or used cars, with Google and GitHub sign-in, MFA, vehicle data from NHTSA and a price check.</p>
+          <ul class="tags"><li>React</li><li>TypeScript</li><li>Supabase</li><li>RLS</li><li>Cloudflare</li></ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://car-market-1fq.pages.dev/" target="_blank" rel="noreferrer">Visit live <svg width="15" height="15"><use href="#i-arrow"/></svg></a>
+            <a class="btn" href="https://github.com/kalusartem/Car-Market" target="_blank" rel="noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot code mono" aria-hidden="true">
+          <span><b>$</b> stack</span>
+          <span><em>next.js</em> · app router · edge</span>
+          <span><em>supabase</em> · postgres · rls · storage</span>
+          <span><em>auth</em> · github oauth · totp mfa</span>
+          <span><em>forms</em> · zod · turnstile · resend</span>
+        </div>
+        <div class="body">
+          <span class="status">Live</span>
+          <h3>Full-Stack Portfolio</h3>
+          <p>My main portfolio: a Next.js app on Cloudflare's edge with a Supabase backend, a project admin dashboard with TOTP MFA, Row Level Security and a captcha-protected contact form.</p>
+          <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>Postgres</li></ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://full-stack-portfolio-2.pages.dev/" target="_blank" rel="noreferrer">Visit live <svg width="15" height="15"><use href="#i-arrow"/></svg></a>
+            <a class="btn" href="https://github.com/kalusartem/Full-Stack-Portfolio-2" target="_blank" rel="noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>Code</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <p class="eyebrow mono">What I do</p>
+    <h2>From database to deploy</h2>
+    <div class="skills">
+      <div class="skill">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></svg></span>
+        <h3>Full-stack web apps</h3>
+        <p>Typed React front ends on top of Postgres, with auth, admin tooling and server-side validation built in from day one.</p>
+        <ul class="tags"><li>Next.js</li><li>React</li><li>TypeScript</li><li>Supabase</li></ul>
+      </div>
+      <div class="skill">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5Z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg></span>
+        <h3>Real-time &amp; 3D</h3>
+        <p>Multiplayer browser games and WebGL scenes with shared client/server rules, WebSocket netcode and a 60 fps budget.</p>
+        <ul class="tags"><li>Three.js</li><li>WebGL</li><li>WebSockets</li><li>Node.js</li></ul>
+      </div>
+      <div class="skill">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></span>
+        <h3>AI automation</h3>
+        <p>Workflows that remove busywork: lead capture, data pipelines, internal tools and LLM-powered helpers wired into real systems.</p>
+        <ul class="tags"><li>LLM APIs</li><li>Webhooks</li><li>Integrations</li></ul>
+      </div>
+      <div class="skill">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <h3>Production-ready</h3>
+        <p>Row Level Security, TOTP MFA, captcha-protected forms, SEO metadata and push-to-deploy pipelines on the edge.</p>
+        <ul class="tags"><li>RLS</li><li>MFA</li><li>Cloudflare</li><li>CI/CD</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="connect">
+    <div class="connect">
+      <div>
+        <p class="eyebrow mono">Contact</p>
+        <h2>Let's build something together.</h2>
+        <p>Have a product, internal tool or automation in mind, or a role on your team? Reach me on GitHub or LinkedIn, or use the contact form on my main portfolio.</p>
+      </div>
+      <ul class="links">
+        <li><a class="link" href="https://github.com/kalusartem" target="_blank" rel="noreferrer">
+          <span class="logo"><svg width="22" height="22"><use href="#i-github"/></svg></span>
+          <span class="text"><strong>GitHub</strong><small>github.com/kalusartem</small></span>
+          <svg class="arrow" width="16" height="16"><use href="#i-arrow"/></svg>
+        </a></li>
+        <li><a class="link" href="https://www.linkedin.com/in/artemkalus" target="_blank" rel="noreferrer">
+          <span class="logo"><svg width="22" height="22"><use href="#i-linkedin"/></svg></span>
+          <span class="text"><strong>LinkedIn</strong><small>linkedin.com/in/artemkalus</small></span>
+          <svg class="arrow" width="16" height="16"><use href="#i-arrow"/></svg>
+        </a></li>
+        <li><a class="link" href="https://full-stack-portfolio-2.pages.dev/#contact" target="_blank" rel="noreferrer">
+          <span class="logo"><svg width="22" height="22"><use href="#i-globe"/></svg></span>
+          <span class="text"><strong>Contact form</strong><small>full-stack-portfolio-2.pages.dev</small></span>
+          <svg class="arrow" width="16" height="16"><use href="#i-arrow"/></svg>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Artem Kalus</span>
+    <div class="foot-links">
+      <a href="channel-analytics/">Channel Analytics</a>
+      <a href="https://github.com/kalusartem" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/artemkalus" target="_blank" rel="noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("theme").addEventListener("click", function () {
+    var root = document.documentElement;
+    var dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    var next = dark ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
